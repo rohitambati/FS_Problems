@@ -36,32 +36,31 @@ Since no numbers print 0
 */
 import java.util.*;
 class AddNum{
-    public static boolean isNum(String x){
-        try{
-            int n=Integer.parseInt(x);
-            return true;
-        }catch(NumberFormatException e){
-            return false;
+    public static void findSum(String s){
+        StringBuilder num=new StringBuilder();
+        int sum=0;
+        for(int i=0;i<s.length();i++){
+            if(Character.isDigit(s.charAt(i))){
+                num.append(s.charAt(i));
+            }
+            else{
+                if(num.length()!=0){
+                    sum+=Integer.parseInt(num.toString());
+                    num=new StringBuilder();
+                }
+            }
+        }
+        if(num.length()!=0){
+            System.out.println(sum+Integer.parseInt(num.toString()));
+        }
+        else{
+            System.out.println(sum);
         }
         
     }
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
         String s=sc.next();
-        int ans=0;
-        for(int i=0;i<s.length()-1;i++){
-            StringBuilder num=new StringBuilder();
-            while(isNum(Character.toString(s.charAt(i)))==true){
-               num.append(s.charAt(i)); 
-               i++;
-            }
-            ans+=Integer.parseInt(num.toString());
-        }
-        System.out.println(ans);
+        findSum(s);
     }
 }
-
-
-
-
-
