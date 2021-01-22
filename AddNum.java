@@ -64,4 +64,3 @@ class AddNum{
         findSum(s);
     }
 }
-
