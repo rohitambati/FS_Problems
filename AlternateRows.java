@@ -26,7 +26,6 @@ Explanation: write the given word in 3 rows
 s         e
   y    t    m
      s
-
 the word is seytms
 
 
