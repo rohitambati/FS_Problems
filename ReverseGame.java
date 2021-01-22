@@ -5,7 +5,6 @@ In this game Shyam wants Ramu to convert the string in the following manner
 
 Ramu has to only reverse the letters(a-z,A-Z) and other letters remain unchanged
 
-
 Sample Test Case -1
 
 input = a&b*c$rt
