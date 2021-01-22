@@ -42,40 +42,50 @@ ti sgohsi od (We have one space in row-1 and another space in row-2)
 
 */
 import java.util.*;
-class AlternateRows{
-    public static void printPattern(String s,int n){
-        StringBuilder[] sb=new StringBuilder[n];
-        for(int i=0;i<n;i++){
-            sb[i]=new StringBuilder();
-        }
-        int index=0;
-        boolean flag=true;
-        for(int i=0;i<s.length();i++){
-            sb[i].append(s.charAt(i));
-            if(index==0){
-                flag=true;
-            }
-            else if(index==n-1){
-                flag=false;
-            }
-            if(flag){
-                index++;
-            }
-            else{
-                index--;
-            }
-        }
-        for(i=0;i<n;i++){
-            System.out.print(sb[i].toString());
-        }
-    }
-    public static void main(String[] args){
+class Test
+{
+    public static void main(String []args)
+    {
         Scanner sc=new Scanner(System.in);
         String s=sc.nextLine();
         int n=sc.nextInt();
+       
+        int index=0;
+        boolean flag=true;
         if(n==1)
-            System.out.println(s);
-        else
-            printPattern(s,n);    
+        {
+            System.out.println(s); 
+            System.exit(1);
+        }
+        StringBuilder  sb[]=new StringBuilder[n];
+        for(int i=0;i<n;i++)
+        {
+            sb[i]=new StringBuilder();
+        }
+        for(int i=0;i<s.length();i++)
+        {
+            sb[index].append(""+s.charAt(i));
+            if(index==n-1)
+            {
+                flag=false;
+            }
+            else if(index==0)
+            {
+                flag=true;
+            }
+            if(flag)
+            {
+                index++;
+            }
+            else
+            {
+                index--;
+            }
+        }
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(sb[i].toString());
+        }
+        
     }
 }
