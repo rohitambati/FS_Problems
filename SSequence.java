@@ -18,7 +18,6 @@ input = abc
 ahbgdc
 output = true
 
-
 Sample Test Case2
 input = aik
 appkllli
